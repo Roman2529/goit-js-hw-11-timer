@@ -4,15 +4,13 @@ const refs = {
   hoursRef: document.querySelector('[data-value="hours"]'),
   daysRef: document.querySelector('[data-value="days"]'),
 };
+
 const timer = {
   start() {
     const startTime = new Date("Oct 31, 2020");
     setInterval(() => {
       const currentTime = Date.now();
       const deltaTime = startTime - currentTime;
-      // console.log("startTime", startTime);
-      // console.log("currentTime", currentTime);
-      //   console.log(deltaTime);
       timerGeneral(deltaTime);
     }, 1000);
   },
@@ -46,7 +44,6 @@ function timerGeneral(time) {
    * миллисекунд в одной секунде (1000)
    */
   const secs = pad(Math.floor((time % (1000 * 60)) / 1000));
-  // console.log(`${days}:${hours}:${mins}:${secs}`);
 
   refs.secsRef.textContent = secs;
   refs.minsRef.textContent = mins;
